@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:2:1-45:12
+ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:2:1-46:12
 	package
 		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:3:5-24
 		INJECTED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml
@@ -27,10 +27,11 @@ MERGED from [com.google.android.gms:play-services-maps:10.2.6] C:\Users\Din\.and
 	android:name
 		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:12:22-64
 application
-ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:14:5-43:19
+ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:15:5-44:19
 MERGED from [com.android.support:appcompat-v7:24.2.1] C:\Users\Din\.android\build-cache\7facefafb112e4f7421c43e294b6ba3782b58eab\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:animated-vector-drawable:24.2.1] C:\Users\Din\.android\build-cache\09fcf73b88e31af8ba4bb83bec8f3425396c37a0\output\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-vector-drawable:24.2.1] C:\Users\Din\.android\build-cache\1f2a87fad93b27b84fb1d9b20ca70972b6b9ef69\output\AndroidManifest.xml:23:5-20
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\Din\.android\build-cache\85a2b83098d03b90825e5c97a30153afb3ca98f0\output\AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.gms:play-services-maps:10.2.6] C:\Users\Din\.android\build-cache\8b5c36afa93d1373993ec38f116566a4ab0fbd22\output\AndroidManifest.xml:24:5-19
 MERGED from [com.google.android.gms:play-services-base:10.2.6] C:\Users\Din\.android\build-cache\4b83b694119e16013f5ae5908925ebcfe15d9d1a\output\AndroidManifest.xml:18:5-20:19
 MERGED from [com.google.android.gms:play-services-tasks:10.2.6] C:\Users\Din\.android\build-cache\deeee5b8b1d7d43eec94e07ff12048ce28add774\output\AndroidManifest.xml:4:5-19
@@ -42,46 +43,47 @@ MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Din\.android\b
 MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Din\.android\build-cache\736f790ebef20243ffbeb0b94f92e1c8f5d3b580\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Din\.android\build-cache\ade6760420ade3ccdd7aeb8908761cb24a65a648\output\AndroidManifest.xml:25:5-20
 	android:label
-		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:17:9-41
+		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:18:9-41
 	android:supportsRtl
-		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:18:9-35
+		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:19:9-35
 	android:allowBackup
-		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:15:9-35
+		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:16:9-35
 	android:icon
-		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:16:9-43
+		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:17:9-43
 	android:theme
-		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:19:9-40
+		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:20:9-40
 meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:29:9-31:55
+ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:30:9-32:55
 	android:value
-		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:31:13-52
+		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:32:13-52
 	android:name
-		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:30:13-58
+		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:31:13-58
 activity#grp1.grp1.MapsActivity
-ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:33:9-41:20
+ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:34:9-42:20
 	android:label
-		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:35:13-56
+		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:36:13-56
 	android:name
-		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:34:13-41
+		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:35:13-41
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:36:13-40:29
+ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:37:13-41:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:37:17-69
+ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:38:17-69
 	android:name
-		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:37:25-66
+		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:38:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:39:17-77
+ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:40:17-77
 	android:name
-		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:39:27-74
+		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:40:27-74
 service#grp1.grp1.GPS
-ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:42:9-40
+ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:43:9-40
 	android:name
-		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:42:18-37
+		ADDED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml:43:18-37
 uses-sdk
 INJECTED from C:\Users\Din\Desktop\GRP1\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:24.2.1] C:\Users\Din\.android\build-cache\7facefafb112e4f7421c43e294b6ba3782b58eab\output\AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:animated-vector-drawable:24.2.1] C:\Users\Din\.android\build-cache\09fcf73b88e31af8ba4bb83bec8f3425396c37a0\output\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:24.2.1] C:\Users\Din\.android\build-cache\1f2a87fad93b27b84fb1d9b20ca70972b6b9ef69\output\AndroidManifest.xml:21:5-43
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\Din\.android\build-cache\85a2b83098d03b90825e5c97a30153afb3ca98f0\output\AndroidManifest.xml:7:5-43
 MERGED from [com.google.android.gms:play-services-maps:10.2.6] C:\Users\Din\.android\build-cache\8b5c36afa93d1373993ec38f116566a4ab0fbd22\output\AndroidManifest.xml:23:5-43
 MERGED from [com.google.android.gms:play-services-base:10.2.6] C:\Users\Din\.android\build-cache\4b83b694119e16013f5ae5908925ebcfe15d9d1a\output\AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-tasks:10.2.6] C:\Users\Din\.android\build-cache\deeee5b8b1d7d43eec94e07ff12048ce28add774\output\AndroidManifest.xml:3:5-43
