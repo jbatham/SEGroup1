@@ -87,7 +87,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             }
                         }
                     };
-                    Dbreq dbreq = new Dbreq("232323","23232323", didstr, responseListener);
+                    Dbreq dbreq = new Dbreq(latstr,langstr, didstr, responseListener);
                     RequestQueue queue = Volley.newRequestQueue(MapsActivity.this);
                     queue.add(dbreq);
                 }else{

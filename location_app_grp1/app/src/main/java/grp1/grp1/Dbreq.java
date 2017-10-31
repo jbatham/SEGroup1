@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Dbreq extends StringRequest{
-    private static final String DBREQ_REQUEST_URL = "http://localhost/localdata/locdata.php";
+    private static final String DBREQ_REQUEST_URL = "http://ec2-35-176-82-29.eu-west-2.compute.amazonaws.com/index.php";
     private Map<String, String> params;
 
 
