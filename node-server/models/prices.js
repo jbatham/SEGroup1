@@ -7,7 +7,7 @@ const db = require('../db.js');
 // REF: http://janmatuschek.de/LatitudeLongitudeBoundingCoordinates
 exports.get_data = function(params, boundingBox, done) {
 	db.get().query(
-		'SELECT * FROM android WHERE' +
+		'SELECT * FROM prices WHERE' +
 		'(RADIANS(Lat) => RADIANS(?) AND RADIANS(Lat) <= RADIANS(?)) AND (RADIANS(Long) >= RADIANS(?) AND RADIANS(Long) <= RADIANS(?))' +
 		'AND' +
 		'ACOS(SIN(RADIANS(?)) * SIN(RADIANS(Lat)) + COS(RADIANS(?)) * COS(RADIANS(Lat)) * COS(RADIANS(Long) - (RADIANS(?)))) <= ?',

@@ -1,9 +1,10 @@
 // ** Functions to control the logic of the server interaction with db **
 const prices = require('../models/prices.js');
-const boundingBox = require('../utils/boundingBox.js')
+const boundingBox = require('../utils/bounding-box.js')
 // TODO: Write boundingBox function
 
 exports.get_location_radius = function(req, res) {
+	console.log("trying to sort stuff");
 	lat = req.params.lat;
 	long = req.params.long;
 	distance = req.params.distance;
