@@ -1,4 +1,4 @@
-// Basic server
+// ** Basic server setup **
 const db = require('./db');
 const express = require('express');
 
