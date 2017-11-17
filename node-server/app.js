@@ -13,11 +13,13 @@ db.connect(function(err) {
 		console.log('> Unable to connect to the database!');
 		process.exit(1);
 	} else {
+		console.log('  Connected!')
 		app.listen(3000, function(err) {
-			console.log("> Connecting to server...");
+			console.log("> Connecting to server..");
 			if (err) {
 				console.log('> Unable to start the server!');
 			}
+			console.log('  Connected!');
 			console.log('> Listening on port 3000..');
 		})
 	}
