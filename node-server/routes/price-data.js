@@ -7,7 +7,7 @@ const price_controller = require('../controllers/get-prices.js')
 // // Test route
 // router.get('/', function(req,res) {
 // 	res.send('Inside prices route!');
-// });
+//});
 
 // GET house price data
 router.post('/get', price_controller.get_location_radius);

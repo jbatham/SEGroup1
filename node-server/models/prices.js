@@ -6,12 +6,12 @@ const db = require('../db.js');
 // db data within the distance constraints, computed via great circle calculations
 // REF: http://janmatuschek.de/LatitudeLongitudeBoundingCoordinates
 exports.get_data = function(params, boundingBox, done) {
-	// console.log('inside get_data: ', params);
+	console.log('> Getting db data..');
 	db.get().query(
-		'SELECT * FROM prices WHERE' +
-		' (RADIANS(`Lat`) >= ? AND RADIANS(`Lat`) <= ?) AND (RADIANS(`Long`) >= ? AND RADIANS(`Long`) <= ?)' +
+		'SELECT * FROM BN WHERE' +
+		' (RADIANS(`lat`) >= ? AND RADIANS(`lat`) <= ?) AND (RADIANS(`lng`) >= ? AND RADIANS(`lng`) <= ?)' +
 		' AND' +
-		' ACOS(SIN(RADIANS(?)) * SIN(RADIANS(`Lat`)) + COS(RADIANS(?)) * COS(RADIANS(`Lat`)) * COS(RADIANS(`Long`) - RADIANS(?))) <= ?;',
+		' ACOS(SIN(RADIANS(?)) * SIN(RADIANS(`lat`)) + COS(RADIANS(?)) * COS(RADIANS(`lat`)) * COS(RADIANS(`lng`) - RADIANS(?))) <= ?;',
 		[boundingBox.minLat, boundingBox.maxLat, boundingBox.minLong, boundingBox.maxLong,
 		params.lat, params.lat, params.long, params.distance/6371],	// distance/6371 is angular radius
 		function(err, result) {
@@ -20,6 +20,3 @@ exports.get_data = function(params, boundingBox, done) {
 		}
 	);
 }
-
-// TODO: work out format of db data, potentially add FOR JSON AUTO, or FOR JSON and format manually
-// verify sending data through callback correctly

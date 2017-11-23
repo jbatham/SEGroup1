@@ -27,6 +27,9 @@ package-lock.json
 *.log
 *.gz
 
+# env
+.env*
+
 # OS X
 .DS_Store*
 ._*

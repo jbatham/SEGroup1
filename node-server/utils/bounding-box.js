@@ -7,7 +7,7 @@ exports.bounding_box = function(params) {
 	lat = parseFloat(params.lat);
 	long = parseFloat(params.long);
 	distance = parseFloat(params.distance);
-
+	console.log(lat,long,distance);
 	curLocation = new Geopoint(lat,long)
 	boundingCoords = curLocation.boundingCoordinates(distance, inKilometers=true);
 	// console.log(JSON.stringify(boundingBox[0]._degLat) + '\n');
