@@ -8,6 +8,9 @@ const PORT = process.env.PORT;
 const app = express();
 
 app.use('/price-data', price_routes);
+app.get('/', function(req,res) {
+	res.send('Server Online');;
+});
 
 db.connect(function(err) {
 	console.log('> Trying to connect to db..');

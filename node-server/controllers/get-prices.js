@@ -1,7 +1,6 @@
 // ** Functions to control the logic of the server interaction with db **
 const prices = require('../models/prices.js');
 const bounding_box = require('../utils/bounding-box.js').bounding_box;
-// TODO: Write boundingBox function
 
 exports.get_location_radius = function(req, res) {
 	console.log("> Getting house price data..");

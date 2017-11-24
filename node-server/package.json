@@ -9,7 +9,8 @@
     "express": "^4.16.2",
     "geopoint": "^1.0.1",
     "knex": "^0.14.0",
-    "mysql": "^2.15.0"
+    "mysql": "^2.15.0",
+    "pm2": "^2.8.0"
   },
   "devDependencies": {},
   "scripts": {
