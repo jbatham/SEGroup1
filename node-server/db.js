@@ -5,7 +5,6 @@ require('dotenv').config();
 
 var pool = null;
 
-// TODO: move the db config details to a dotenv file
 exports.connect = function(done) {
 	pool = mysql.createPool({
 		host: process.env.DATABASE_HOST,

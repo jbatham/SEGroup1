@@ -2,7 +2,7 @@
 const express = require('express')
 const router = express.Router()
 
-const price_controller = require('../controllers/get-prices.js')
+const price_controller = require('../controllers/get-prices')
 
 // // Test route
 // router.get('/', function(req,res) {
@@ -13,5 +13,3 @@ const price_controller = require('../controllers/get-prices.js')
 router.post('/get', price_controller.get_location_radius);
 
 module.exports = router;
-
-// TODO: verify this function routing is correct

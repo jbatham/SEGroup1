@@ -1,7 +1,7 @@
 // ** Basic server setup **
 const db = require('./db');
 const express = require('express');
-const price_routes = require('./routes/price-data.js')
+const price_routes = require('./routes/price-data')
 require('dotenv').config();
 
 const PORT = process.env.PORT;
@@ -23,6 +23,7 @@ db.connect(function(err) {
 			console.log("> Connecting to server..");
 			if (err) {
 				console.log('> Unable to start the server!');
+				process.exit(1);
 			}
 			console.log('  Connected!');
 			console.log('> Listening on port ' + PORT + '..');

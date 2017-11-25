@@ -1,6 +1,5 @@
 // ** Model for db statements related to obtaining the prices data **
-const db = require('../db.js');
-// const convert_to_rads = require('../utils/convert_to_rads.js');
+const db = require('../db');
 
 // Takes the boundingbox parameters from the controller, and selects the set of
 // db data within the distance constraints, computed via great circle calculations
