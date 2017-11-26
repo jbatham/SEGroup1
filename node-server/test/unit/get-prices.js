@@ -1,15 +1,29 @@
 const chai = require('chai');
 const sinon = require('sinon');
-const expect = chai.expect();
-const get_location_radius = require('../../controllers/get-prices.js');
+const expect = chai.expect;
+const get_location_radius = require('../../controllers/get-prices').get_location_radius;
+const prices = require('../../models/prices');
+
 
 describe('get_location_radius', () => {
 	describe('get_data callback function', () => {
-		it('should send an error if there is an err', () => {
-			var stub = sinon.stub('prices','get_data').throws('DB TEST');
-			// var =
-			get_location_radius
+		var stub = null; var request = {}; var response = {};
+		before(function() {
+			stub = sinon.stub(prices,'get_data');
+			request = {
+				query: {
+					lat: 50.8388481140,
+					long: -0.1175390035,
+					distance: 2
+				}
+			};
+			response = {};
 		});
-		it('should send a json of the result if no err');
+		it('should call prices.get_data', function(done) {
+			get_location_radius(request, response);
+			var callCount = stub.callCount;
+			expect(callCount).equals(1);
+			done();
+		});
 	});
 });

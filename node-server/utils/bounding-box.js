@@ -4,15 +4,15 @@ var Geopoint = require('geopoint');
 
 exports.bounding_box = function(params) {
 
-	if (params == null) throw 'Error: no params object';
+	if (params == null) return 'Error: no params object';
 	lat = parseFloat(params.lat);
 	long = parseFloat(params.long);
 	distance = parseFloat(params.distance);
 	console.log(lat,long,distance);
 	curLocation = new Geopoint(lat,long);
-	if (curLocation instanceof Error) throw curLocation;
+	if (curLocation instanceof Error) return curLocation;
 	boundingCoords = curLocation.boundingCoordinates(distance, inKilometers=true);
-	if (boundingCoords instanceof Error) throw boundingCoords;
+	if (boundingCoords instanceof Error) return boundingCoords;
 	// console.log(JSON.stringify(boundingBox[0]._degLat) + '\n');
 
 	boundingBox = {

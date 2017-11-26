@@ -6,6 +6,7 @@ const db = require('../db');
 // REF: http://janmatuschek.de/LatitudeLongitudeBoundingCoordinates
 exports.get_data = function(params, boundingBox, done) {
 	console.log('> Getting db data..');
+	if (! db.get()) return 'Error in getting database config';
 	db.get().query(
 		'SELECT * FROM BN WHERE' +
 		' (RADIANS(`lat`) >= ? AND RADIANS(`lat`) <= ?) AND (RADIANS(`lng`) >= ? AND RADIANS(`lng`) <= ?)' +

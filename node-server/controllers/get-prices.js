@@ -8,7 +8,9 @@ exports.get_location_radius = function(req, res) {
 	boundingBox = bounding_box(req.query);
 	console.log(boundingBox)
 	prices.get_data(req.query,boundingBox,function(err, result) {
-		if (err) res.send("ERROR IN FETCHING DATA FROM DB: " + err);
+		if (err) {
+			res.send("ERROR IN FETCHING DATA FROM DB: " + err);
+		}
 		else {
 			var resultString = JSON.stringify(result);
 			console.log('Response sent: ', resultString);
