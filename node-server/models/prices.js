@@ -1,12 +1,12 @@
 // ** Model for db statements related to obtaining the prices data **
-const db = require('../db.js');
-// const convert_to_rads = require('../utils/convert_to_rads.js');
+const db = require('../db');
 
 // Takes the boundingbox parameters from the controller, and selects the set of
 // db data within the distance constraints, computed via great circle calculations
 // REF: http://janmatuschek.de/LatitudeLongitudeBoundingCoordinates
 exports.get_data = function(params, boundingBox, done) {
 	console.log('> Getting db data..');
+	if (! db.get()) return 'Error in getting database config';
 	db.get().query(
 		'SELECT * FROM BN WHERE' +
 		' (RADIANS(`lat`) >= ? AND RADIANS(`lat`) <= ?) AND (RADIANS(`lng`) >= ? AND RADIANS(`lng`) <= ?)' +
