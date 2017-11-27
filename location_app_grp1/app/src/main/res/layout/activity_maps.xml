@@ -68,4 +68,13 @@
         android:layout_marginStart="46dp"
         android:text="@string/lng" />
 
+    <Button
+        android:id="@+id/hmb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/clb"
+        android:layout_marginEnd="55dp"
+        android:text="@string/heatmap" />
+
 </RelativeLayout>

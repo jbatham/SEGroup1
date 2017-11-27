@@ -37,7 +37,7 @@ public class GPS extends Service implements LocationListener {
     Location location;
 
 
-    private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 10;
+    private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 0;
     private static final long MIN_TIME_UPDATES = 1000*60*1;
 
     protected LocationManager locationManager;
@@ -94,9 +94,10 @@ public class GPS extends Service implements LocationListener {
             }
             if(GPSenabled){
                 if(location==null) {
-
                     locationManager.requestLocationUpdates(
-                            LocationManager.GPS_PROVIDER, MIN_TIME_UPDATES, MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
+                            LocationManager.GPS_PROVIDER,
+                            MIN_TIME_UPDATES,
+                            MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
 
                     if (locationManager != null) {
                         location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);

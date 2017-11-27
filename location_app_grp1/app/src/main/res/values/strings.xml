@@ -7,4 +7,5 @@
     <string name="lng">Lng</string>
     <string name="latitude">Latitude</string>
     <string name="longitude">Longitude</string>
+    <string name="heatmap">HeatMap</string>
 </resources>
