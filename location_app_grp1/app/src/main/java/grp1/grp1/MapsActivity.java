@@ -74,6 +74,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     ArrayList<LatLng> slocations = new ArrayList();
     ArrayList<LatLng> mlocations = new ArrayList();
     ArrayList<LatLng> hlocations = new ArrayList();
+    double defaultlat = 50.8388481140, defaultlong = -0.1175390035;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,46 +90,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         laview = (TextView) findViewById(R.id.latview);
         lnview = (TextView) findViewById(R.id.lngview);
 
-
+        ActivityCompat.requestPermissions(MapsActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 111);
         currentl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 gps = new GPS(MapsActivity.this);
                 double latitude, longitude;
-                if(gps.cgetLocation()){
-                    latitude = gps.getLatitude();
-                    longitude = gps.getLongitude();
-                    //laview.setText(""+latitude+"");
-                    lnview.setText(""+longitude+"");
+                Location location = gps.getLocation();
+                if(location!=null){
+                    latitude = location.getLatitude();
+                    longitude = location.getLongitude();
+                    laview.setText(""+latitude+"");
+                    lnview.setText("" + longitude + "");
+                    defaultlat = latitude;
+                    defaultlong = longitude;
                     mMap.clear();
                     LatLng latlng = new LatLng(latitude, longitude);
                     mMap.addMarker(new MarkerOptions().position(latlng).title("Current Position"));
-                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latlng, 10));
-
-                    //pushing to database
-                    String latstr= Double.toString(latitude);
-                    String langstr= Double.toString(longitude);
-                    String didstr = Integer.toString(1);
-                    Response.Listener<String> responseListener = new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            try{
-                                JSONObject jsonObject = new JSONObject(response);
-                                boolean success = jsonObject.getBoolean("success");
-
-                                if(success){
-                                    Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
-                                }
-                            }catch (JSONException e){
-                                e.printStackTrace();
-                            }
-                        }
-                    };
-                    Dbreq dbreq = new Dbreq(latstr,langstr, didstr, responseListener);
-                    RequestQueue queue = Volley.newRequestQueue(MapsActivity.this);
-                    queue.add(dbreq);
-                }else{
-                    gps.settingAlert();
+                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latlng, 12));
                 }
             }
         });
@@ -137,10 +116,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         heatmapb1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double latitude1, longitude1;
-                latitude1 = 50.8388481140;
-                longitude1 = -0.1175390035;
-                String link = "http://ec2-35-176-136-57.eu-west-2.compute.amazonaws.com:/price-data/get\\?lat="+latitude1+"&long="+longitude1+"&distance=1";
+                String link = "http://ec2-35-176-136-57.eu-west-2.compute.amazonaws.com:/price-data/get\\?lat="+defaultlat+"&long="+defaultlong+"&distance=1";
                 new GetDataTask().execute(link);
             };
         });
@@ -153,18 +129,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         hlocations.clear();
         System.out.println(jsonArray.length());
         if(jsonArray.length()!=0){
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < 3000; i++) {
                 try {
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
                     int price = jsonObject.getInt("price");
                     double lat = jsonObject.getDouble("lat");
                     double lng = jsonObject.getDouble("lng");
-                    System.out.println(jsonObject.toString());
-                    if(price<=20000){
+                    if(price<=100000){
                         slocations.add(new LatLng(lat,lng));
-                    }else if((price>20000)&&(price<=50000)){
+                    }else if((price>100000)&&(price<=200000)){
                         mlocations.add(new LatLng(lat,lng));
-                    }else if(price>50000){
+                    }else if(price>200000){
                         hlocations.add(new LatLng(lat,lng));
                     }
                 } catch (JSONException e) {
@@ -173,8 +148,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         }
     }
-
-
 
     private void addHeatMap(){
         int[] colors = {Color.rgb(102,225,0), Color.rgb(102,225,0)}; //green
@@ -240,8 +213,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                 String line;
                 line=bufferedReader.readLine();
-               // while((line=bufferedReader.readLine())!=null){
-                    //result.append(line).append("\n");
                 jsonArray = new JSONArray(line);
                     System.out.println("-------------------------");
                     System.out.println(jsonArray.length());
@@ -251,13 +222,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            //test
-            /*try {
-                JSONObject jsonObject = jsonArray.getJSONObject(1);
-                System.out.println(jsonObject.toString());
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }*/
             return "";
         }
 
