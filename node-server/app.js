@@ -29,4 +29,4 @@ db.connect(function(err) {
 			console.log('> Listening on port ' + PORT + '..');
 		})
 	}
-})
+});
