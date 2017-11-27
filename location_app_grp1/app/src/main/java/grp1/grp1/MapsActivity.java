@@ -96,8 +96,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 gps = new GPS(MapsActivity.this);
                 double latitude, longitude;
                 if(gps.cgetLocation()){
-                    latitude = gps.getLatitude();
-                    longitude = gps.getLongitude();
+//                    latitude = gps.getLatitude();
+//                    longitude = gps.getLongitude();
+                    latitude = 50.8388481140;
+                    longitude = -0.1175390035;
                     //laview.setText(""+latitude+"");
                     lnview.setText(""+longitude+"");
                     mMap.clear();
@@ -153,18 +155,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         hlocations.clear();
         System.out.println(jsonArray.length());
         if(jsonArray.length()!=0){
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < 3000; i++) {
                 try {
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
                     int price = jsonObject.getInt("price");
                     double lat = jsonObject.getDouble("lat");
                     double lng = jsonObject.getDouble("lng");
                     System.out.println(jsonObject.toString());
-                    if(price<=20000){
+                    if(price<=100000){
                         slocations.add(new LatLng(lat,lng));
-                    }else if((price>20000)&&(price<=50000)){
+                    }else if((price>100000)&&(price<=200000)){
                         mlocations.add(new LatLng(lat,lng));
-                    }else if(price>50000){
+                    }else if(price>200000){
                         hlocations.add(new LatLng(lat,lng));
                     }
                 } catch (JSONException e) {
