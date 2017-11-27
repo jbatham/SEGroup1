@@ -1,10 +1,12 @@
 package grp1.grp1;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.app.Service;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -12,6 +14,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 
 import java.util.concurrent.ExecutionException;
 
@@ -38,7 +41,7 @@ public class GPS extends Service implements LocationListener {
 
 
     private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 10;
-    private static final long MIN_TIME_UPDATES = 1000*60*1;
+    private static final long MIN_TIME_UPDATES = 1000 * 60 * 1;
 
     protected LocationManager locationManager;
 
@@ -46,7 +49,6 @@ public class GPS extends Service implements LocationListener {
         this.context = context;
         getLocation();
     }
-
 
 
     @Override
@@ -75,14 +77,23 @@ public class GPS extends Service implements LocationListener {
             GPSenabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
             Nenabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
 
-            if(!GPSenabled && !Nenabled) {
-            }else{
+            if (!GPSenabled && !Nenabled) {
+            } else {
                 this.getLocation = true;
-                if(Nenabled){
-                     locationManager.requestLocationUpdates(
-                             LocationManager.NETWORK_PROVIDER,
-                             MIN_TIME_UPDATES,
-                             MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
+                if (Nenabled) {
+                    if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                        // TODO: Consider calling
+                        //    ActivityCompat#requestPermissions
+                        // here to request the missing permissions, and then overriding
+                        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                        //                                          int[] grantResults)
+                        // to handle the case where the user grants the permission. See the documentation
+                        // for ActivityCompat#requestPermissions for more details.
+                    }
+                    locationManager.requestLocationUpdates(
+                            LocationManager.NETWORK_PROVIDER,
+                            MIN_TIME_UPDATES,
+                            MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
 
                 if (locationManager != null) {
                     location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
