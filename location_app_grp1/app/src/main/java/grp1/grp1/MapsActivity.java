@@ -96,6 +96,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             public void onClick(View v) {
                 gps = new GPS(MapsActivity.this);
                 double latitude, longitude;
+<<<<<<< HEAD
                 Location location = gps.getLocation();
                 if(location!=null){
                     latitude = location.getLatitude();
@@ -104,6 +105,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     lnview.setText("" + longitude + "");
                     defaultlat = latitude;
                     defaultlong = longitude;
+=======
+                if(gps.cgetLocation()){
+//                    latitude = gps.getLatitude();
+//                    longitude = gps.getLongitude();
+                    latitude = 50.8388481140;
+                    longitude = -0.1175390035;
+                    //laview.setText(""+latitude+"");
+                    lnview.setText(""+longitude+"");
+>>>>>>> 0c00931c9e768af5024005700a654ca17843d4b3
                     mMap.clear();
                     LatLng latlng = new LatLng(latitude, longitude);
                     mMap.addMarker(new MarkerOptions().position(latlng).title("Current Position"));
@@ -135,6 +145,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     int price = jsonObject.getInt("price");
                     double lat = jsonObject.getDouble("lat");
                     double lng = jsonObject.getDouble("lng");
+<<<<<<< HEAD
+=======
+                    System.out.println(jsonObject.toString());
+>>>>>>> 0c00931c9e768af5024005700a654ca17843d4b3
                     if(price<=100000){
                         slocations.add(new LatLng(lat,lng));
                     }else if((price>100000)&&(price<=200000)){
