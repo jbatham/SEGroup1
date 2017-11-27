@@ -8,12 +8,11 @@ exports.bounding_box = function(params) {
 	lat = parseFloat(params.lat);
 	long = parseFloat(params.long);
 	distance = parseFloat(params.distance);
-	console.log(lat,long,distance);
+	// console.log(lat,long,distance);
 	curLocation = new Geopoint(lat,long);
 	if (curLocation instanceof Error) return curLocation;
 	boundingCoords = curLocation.boundingCoordinates(distance, inKilometers=true);
 	if (boundingCoords instanceof Error) return boundingCoords;
-	// console.log(JSON.stringify(boundingBox[0]._degLat) + '\n');
 
 	boundingBox = {
 		'minLat': boundingCoords[0]._radLat,
@@ -22,5 +21,6 @@ exports.bounding_box = function(params) {
 		'maxLong': boundingCoords[1]._radLon,
 	}
 
+	// console.log(boundingBox);
 	return boundingBox;
 }

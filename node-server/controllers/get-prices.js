@@ -6,7 +6,6 @@ exports.get_location_radius = function(req, res) {
 	console.log("> Getting house price data..");
 	//console.log(req.query);
 	boundingBox = bounding_box(req.query);
-	console.log(boundingBox)
 	prices.get_data(req.query,boundingBox,function(err, result) {
 		if (err) {
 			res.send("ERROR IN FETCHING DATA FROM DB: " + err);
