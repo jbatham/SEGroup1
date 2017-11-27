@@ -80,12 +80,21 @@ describe('bounding-box', () => {
 
 	});
 	describe('Good parameters', () => {
+		var params = {
+			lat: '50.8388481140',
+			long: '-0.1175390035',
+			distance: '2'
+		};
 		it('should return an object', function() {
-			var params = {
-				lat: '50.8388481140',
-				long: '-0.1175390035',
-				distance: '2'
-			};
+
+			var bb = bounding_box(params);
+			expect(bb).to.have.own.property('minLat');
+			expect(bb).to.have.own.property('minLong');
+			expect(bb).to.have.own.property('maxLat');
+			expect(bb).to.have.own.property('maxLong');
+
+		});
+		it('should have location within bounding box', function() {
 
 			var lat = parseFloat(params.lat);
 			var long = parseFloat(params.long);
@@ -94,10 +103,11 @@ describe('bounding-box', () => {
 			var longRads = testLocation._radLon;
 
 			var bb = bounding_box(params);
-			expect(bb).to.have.own.property('minLat');
-			expect(bb).to.have.own.property('minLong');
-			expect(bb).to.have.own.property('maxLat');
-			expect(bb).to.have.own.property('maxLong');
+			expect(latRads).to.be.lessThan(bb.maxLat);
+			expect(latRads).to.be.greaterThan(bb.minLat);
+			expect(longRads).to.be.lessThan(bb.maxLong);
+			expect(longRads).to.be.greaterThan(bb.minLong);
+			
 		});
 	});
 });
