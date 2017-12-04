@@ -1,4 +1,4 @@
-FROM node:carbon
+FROM node:alpine
 
 # Create app directory
 WORKDIR /app
@@ -6,6 +6,7 @@ WORKDIR /app
 # Install app dependencies
 COPY package*.json ./
 
+RUN npm install pm2 -g
 RUN npm install
 
 COPY . .
@@ -14,4 +15,4 @@ COPY . .
 EXPOSE 5000
 
 # Start the app
-CMD [ "npm", "start" ]
+CMD pm2-docker app.js --web
