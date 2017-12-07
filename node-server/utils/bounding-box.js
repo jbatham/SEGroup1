@@ -10,7 +10,10 @@ exports.bounding_box = function(params) {
 	distance = parseFloat(params.distance);
 	// console.log(lat,long,distance);
 	curLocation = new Geopoint(lat,long);
-	if (curLocation instanceof Error) return curLocation;
+	if (curLocation instanceof Error) {
+		console.log('**** right ere'. curLocation.message);
+		return curLocation.message;
+	}
 	boundingCoords = curLocation.boundingCoordinates(distance, inKilometers=true);
 	if (boundingCoords instanceof Error) return boundingCoords;
 

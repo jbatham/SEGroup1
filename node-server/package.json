@@ -14,13 +14,16 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
     "mocha": "^4.0.1",
     "request": "^2.83.0",
     "sinon": "^4.1.2"
   },
   "scripts": {
-    "start": "NODE_ENV=development node app.js",
-    "test": "NODE_ENV=test mocha test/*"
+    "start": "NODE_ENV=development pm2 start app.js",
+    "pretest": "NODE_ENV=test pm2 start app.js --name testserver",
+    "test": "mocha test/*",
+    "posttest": "pm2 delete testserver"
   },
   "repository": {
     "type": "git",
