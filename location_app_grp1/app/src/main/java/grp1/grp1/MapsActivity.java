@@ -49,6 +49,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import com.google.android.gms.maps.model.TileOverlayOptions;
@@ -62,18 +63,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap mMap;
     private LocationManager locationManager;
     private LocationListener locationListener;
-    private HeatmapTileProvider smProvider;
-    private HeatmapTileProvider mmProvider;
-    private HeatmapTileProvider hmProvider;
+//    private HeatmapTileProvider smProvider;
+//    private HeatmapTileProvider mmProvider;
+//    private HeatmapTileProvider hmProvider;
+    private HeatmapTileProvider mProvider;
     private TileOverlay mOverlay;
 
     Button currentl, heatmapb1;
     GPS gps;
     TextView laview, lnview;
     JSONArray jsonArray;
-    ArrayList<LatLng> slocations = new ArrayList();
-    ArrayList<LatLng> mlocations = new ArrayList();
-    ArrayList<LatLng> hlocations = new ArrayList();
+//    ArrayList<LatLng> slocations = new ArrayList();
+//    ArrayList<LatLng> mlocations = new ArrayList();
+//    ArrayList<LatLng> hlocations = new ArrayList();
+    ArrayList<WeightedLatLng> locations = new ArrayList();
+    double latitude1, longitude1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,10 +106,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     longitude = -0.1175390035;
                     //laview.setText(""+latitude+"");
                     lnview.setText(""+longitude+"");
-                    mMap.clear();
+//                    mMap.clear();
                     LatLng latlng = new LatLng(latitude, longitude);
                     mMap.addMarker(new MarkerOptions().position(latlng).title("Current Position"));
-                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latlng, 10));
+                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latlng, 12));
 
                     //pushing to database
                     String latstr= Double.toString(latitude);
@@ -139,7 +143,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         heatmapb1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double latitude1, longitude1;
+//                double latitude1, longitude1;
                 latitude1 = 50.8388481140;
                 longitude1 = -0.1175390035;
                 String link = "http://ec2-35-176-136-57.eu-west-2.compute.amazonaws.com:/price-data/get\\?lat="+latitude1+"&long="+longitude1+"&distance=1";
@@ -150,25 +154,27 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
     private void addLocation() {
-        slocations.clear();
-        mlocations.clear();
-        hlocations.clear();
+//        slocations.clear();
+//        mlocations.clear();
+//        hlocations.clear();
+        locations.clear();
         System.out.println(jsonArray.length());
         if(jsonArray.length()!=0){
-            for (int i = 0; i < 3000; i++) {
+            for (int i = 0; i < jsonArray.length(); i++) {
                 try {
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
                     int price = jsonObject.getInt("price");
                     double lat = jsonObject.getDouble("lat");
                     double lng = jsonObject.getDouble("lng");
                     System.out.println(jsonObject.toString());
-                    if(price<=100000){
-                        slocations.add(new LatLng(lat,lng));
-                    }else if((price>100000)&&(price<=200000)){
-                        mlocations.add(new LatLng(lat,lng));
-                    }else if(price>200000){
-                        hlocations.add(new LatLng(lat,lng));
-                    }
+                    locations.add(new WeightedLatLng(new LatLng(lat,lng),Math.log(price)));
+//                    if(price<=100000){
+//                        slocations.add(new LatLng(lat,lng));
+//                    }else if((price>100000)&&(price<=200000)){
+//                        mlocations.add(new LatLng(lat,lng));
+//                    }else if(price>200000){
+//                        hlocations.add(new LatLng(lat,lng));
+//                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -179,27 +185,39 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
     private void addHeatMap(){
-        int[] colors = {Color.rgb(102,225,0), Color.rgb(102,225,0)}; //green
-        int[] colors2 = {Color.rgb(225,225,0), Color.rgb(225,225,0)}; //yellow
-        int[] colors3 = {Color.rgb(225,0,0), Color.rgb(225,0,0)}; //red
+        int[] colors = {Color.rgb(0,25,240), Color.rgb(0,255,0), Color.rgb(240,255,0), Color.rgb(255,0,0)};
         float[] startPoints = {
-            0.2f, 1f
+                0.2f, 0.4f, 0.6f, 1f
         };
-        Gradient gradient1 = new Gradient(colors, startPoints);
-        Gradient gradient2 = new Gradient(colors2, startPoints);
-        Gradient gradient3 = new Gradient(colors3, startPoints);
-        if(!slocations.isEmpty()) {
-            smProvider = new HeatmapTileProvider.Builder().data(slocations).gradient(gradient1).build();
-            mOverlay = mMap.addTileOverlay(new TileOverlayOptions().tileProvider(smProvider));
-        }
-        if(!mlocations.isEmpty()) {
-            mmProvider = new HeatmapTileProvider.Builder().data(mlocations).gradient(gradient2).build();
-            mOverlay = mMap.addTileOverlay(new TileOverlayOptions().tileProvider(mmProvider));
-        }
-        if(!hlocations.isEmpty()) {
-            hmProvider = new HeatmapTileProvider.Builder().data(hlocations).gradient(gradient3).build();
-            mOverlay = mMap.addTileOverlay(new TileOverlayOptions().tileProvider(hmProvider));
-        }
+        Gradient gradient = new Gradient(colors, startPoints);
+        LatLng curLocation = new LatLng(latitude1,longitude1);
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(curLocation));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(curLocation,13));
+        mProvider = new HeatmapTileProvider.Builder().weightedData(locations).gradient(gradient).radius(38).opacity(0.6).build();
+        mOverlay = mMap.addTileOverlay(new TileOverlayOptions().tileProvider(mProvider));
+
+//        int[] colors = {Color.rgb(102,225,0), Color.rgb(102,225,0)}; //green
+//        int[] colors2 = {Color.rgb(225,225,0), Color.rgb(225,225,0)}; //yellow
+//        int[] colors3 = {Color.rgb(225,0,0), Color.rgb(225,0,0)}; //red
+//        float[] startPoints = {
+//            0.2f, 1f
+//        };
+//        Gradient gradient1 = new Gradient(colors, startPoints);
+//        Gradient gradient2 = new Gradient(colors2, startPoints);
+//        Gradient gradient3 = new Gradient(colors3, startPoints);
+//        if(!slocations.isEmpty()) {
+//            smProvider = new HeatmapTileProvider.Builder().data(slocations).gradient(gradient1).build();
+//            mOverlay = mMap.addTileOverlay(new TileOverlayOptions().tileProvider(smProvider));
+//        }
+//        if(!mlocations.isEmpty()) {
+//            mmProvider = new HeatmapTileProvider.Builder().data(mlocations).gradient(gradient2).build();
+//            mOverlay = mMap.addTileOverlay(new TileOverlayOptions().tileProvider(mmProvider));
+//        }
+//        if(!hlocations.isEmpty()) {
+//            hmProvider = new HeatmapTileProvider.Builder().data(hlocations).gradient(gradient3).build();
+//            mOverlay = mMap.addTileOverlay(new TileOverlayOptions().tileProvider(hmProvider));
+//        }
     }
 
     @Override
@@ -207,7 +225,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //method displays University of Sussex on the map on app startup
         mMap = googleMap;
         LatLng uos = new LatLng(50.867090, -0.087914);
-        mMap.addMarker(new MarkerOptions().position(uos).title("University of Sussex"));
+//        mMap.addMarker(new MarkerOptions().position(uos).title("University of Sussex"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(uos));
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(uos,12));
     }
