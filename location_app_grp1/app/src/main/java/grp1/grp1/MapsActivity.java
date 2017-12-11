@@ -17,6 +17,7 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -69,7 +70,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private HeatmapTileProvider mProvider;
     private TileOverlay mOverlay;
 
-    Button currentl, heatmapb1;
+    Button currentl, heatmapb1, crimeb;
+    Spinner spinnerm, spinnery;
     GPS gps;
     TextView laview, lnview;
     JSONArray jsonArray;
@@ -77,7 +79,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //    ArrayList<LatLng> mlocations = new ArrayList();
 //    ArrayList<LatLng> hlocations = new ArrayList();
     ArrayList<WeightedLatLng> locations = new ArrayList();
+    ArrayList<CData> cdata = new ArrayList<>();
     double latitude1, longitude1;
+    Crimedata crimedata;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +96,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         heatmapb1 = (Button) findViewById(R.id.hmb);
         laview = (TextView) findViewById(R.id.latview);
         lnview = (TextView) findViewById(R.id.lngview);
+        spinnerm = (Spinner) findViewById(R.id.cmonth);
+        spinnery = (Spinner) findViewById(R.id.cyear);
+        crimeb = (Button) findViewById(R.id.cdatab);
 
 
         currentl.setOnClickListener(new View.OnClickListener() {
@@ -104,7 +111,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //                    longitude = gps.getLongitude();
                     latitude = 50.8388481140;
                     longitude = -0.1175390035;
-                    //laview.setText(""+latitude+"");
+                    laview.setText(""+latitude+"");
                     lnview.setText(""+longitude+"");
 //                    mMap.clear();
                     LatLng latlng = new LatLng(latitude, longitude);
@@ -150,6 +157,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 new GetDataTask().execute(link);
             };
         });
+
+        crimeb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
 
@@ -180,6 +194,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
             }
         }
+    }
+
+    private void addCrime(){
+
     }
 
 

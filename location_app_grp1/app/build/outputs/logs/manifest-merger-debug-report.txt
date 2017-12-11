@@ -1,131 +1,131 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:2:1-46:12
+ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:2:1-46:12
 	package
-		ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:3:5-24
-		INJECTED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml
+		ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:3:5-24
+		INJECTED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:10:5-79
+ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:10:5-79
 	android:name
-		ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:10:22-76
+		ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:10:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:11:5-81
+ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:11:5-81
 	android:name
-		ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:11:22-78
+		ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:11:22-78
 uses-permission#android.permission.INTERNET
-ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:12:5-67
-MERGED from [com.google.android.gms:play-services-maps:10.2.6] /Users/warrenboult/.android/build-cache/d1f24e0f6ce1f5715bd76e6e1838b33af8280fc6/output/AndroidManifest.xml:20:5-66
+ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:12:5-67
+MERGED from [com.google.android.gms:play-services-maps:10.2.6] C:\Users\Din\.android\build-cache\0fb79e322dd073437e56655a272ca9547e4eaf91\output\AndroidManifest.xml:20:5-66
 	android:name
-		ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:12:22-64
+		ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:12:22-64
 application
-ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:15:5-44:19
-MERGED from [com.android.support:appcompat-v7:24.2.1] /Users/warrenboult/.android/build-cache/a28f420805bafacc9387c90411e000cfc0caf43f/output/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:24.2.1] /Users/warrenboult/.android/build-cache/5f02b957aa9ca631a8d4dc64e0bd45c767b142bb/output/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-vector-drawable:24.2.1] /Users/warrenboult/.android/build-cache/bc46c6b40458af9ccd07efb4afd58271658b45ed/output/AndroidManifest.xml:23:5-20
-MERGED from [com.android.volley:volley:1.0.0] /Users/warrenboult/.android/build-cache/fc717c923fc435df1a4767bc8dee08e2933aa4d7/output/AndroidManifest.xml:9:5-20
-MERGED from [com.google.maps.android:android-maps-utils:0.4.4] /Users/warrenboult/.android/build-cache/8d659e5ab302377e1f6510929b00d900c20eb49a/output/AndroidManifest.xml:7:5-11:19
-MERGED from [com.google.android.gms:play-services-maps:10.2.6] /Users/warrenboult/.android/build-cache/d1f24e0f6ce1f5715bd76e6e1838b33af8280fc6/output/AndroidManifest.xml:24:5-19
-MERGED from [com.google.android.gms:play-services-base:10.2.6] /Users/warrenboult/.android/build-cache/b5cf7da8dea2b2ca223d9f440f71c8212cdeae91/output/AndroidManifest.xml:18:5-20:19
-MERGED from [com.google.android.gms:play-services-tasks:10.2.6] /Users/warrenboult/.android/build-cache/ee0c343afc3ca621053dd47659f6e9e204d6fcba/output/AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-basement:10.2.6] /Users/warrenboult/.android/build-cache/cfc3a944bd914c17496642785e6d3ea0f0d02f35/output/AndroidManifest.xml:19:5-21:19
-MERGED from [com.android.support:support-v4:25.2.0] /Users/warrenboult/.android/build-cache/3b0d4537075083bc256d7faafceff707cd13532c/output/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:25.2.0] /Users/warrenboult/.android/build-cache/9d1443281edd0333a211d86f6bf4e3e81c7f1f25/output/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:25.2.0] /Users/warrenboult/.android/build-cache/fb6161301cba430a1e1e83cb32ba4523d0d440e8/output/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:25.2.0] /Users/warrenboult/.android/build-cache/550469b56b25bd595282bdf3ee190a911c97bb49/output/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:25.2.0] /Users/warrenboult/.android/build-cache/681fd92d7bd73e83d33630ad1d6aec64ad880a49/output/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:25.2.0] /Users/warrenboult/.android/build-cache/7d6a2e5aa6c4330a423828831dab9b19c4c8ec5e/output/AndroidManifest.xml:25:5-20
+ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:15:5-44:19
+MERGED from [com.android.support:appcompat-v7:24.2.1] C:\Users\Din\.android\build-cache\1c25f165830512acbe8c0b9c6f742cdc48690265\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:24.2.1] C:\Users\Din\.android\build-cache\be5d2043c6a4fc8b7b18b4069f261e883ea99b7c\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:24.2.1] C:\Users\Din\.android\build-cache\91ca0434da4e7ba95fc5ddbe4d9ba8256af53bc8\output\AndroidManifest.xml:23:5-20
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\Din\.android\build-cache\96047eeac98eeb025bb7d4e4e1e3ecfa1f24954d\output\AndroidManifest.xml:9:5-20
+MERGED from [com.google.maps.android:android-maps-utils:0.4.4] C:\Users\Din\.android\build-cache\71a9f480f70f7e255196bae687f468551952a4d6\output\AndroidManifest.xml:7:5-11:19
+MERGED from [com.google.android.gms:play-services-maps:10.2.6] C:\Users\Din\.android\build-cache\0fb79e322dd073437e56655a272ca9547e4eaf91\output\AndroidManifest.xml:24:5-19
+MERGED from [com.google.android.gms:play-services-base:10.2.6] C:\Users\Din\.android\build-cache\02b3ace1e12808de1998f4a2a8ef2d49370487b0\output\AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-tasks:10.2.6] C:\Users\Din\.android\build-cache\e72790e19e83200b879f2451e6027a063e326244\output\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:10.2.6] C:\Users\Din\.android\build-cache\1105428db38f82b84e11748729b9ec4ea40f5672\output\AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Din\.android\build-cache\23157f4ecd6824fe8041270b289fa36c0cac4688\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Din\.android\build-cache\afb6cf65e662a9f07cded90a6ca0809dd8f40b97\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Din\.android\build-cache\e6f92d9175a028b849664dc307addfe03d173cf8\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Din\.android\build-cache\802f7ee596e87fcb339b7b715df8ec7532e59652\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Din\.android\build-cache\30d79d8484a3e20f94c2caacf2afcbdc63fe6b29\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Din\.android\build-cache\e1463bd603fe770e610bdd148d9c96f64ca94743\output\AndroidManifest.xml:25:5-20
 	android:label
-		ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:18:9-41
+		ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:18:9-41
 	android:supportsRtl
-		ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:19:9-35
+		ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:19:9-35
 	android:allowBackup
-		ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:16:9-35
+		ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:16:9-35
 	android:icon
-		ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:17:9-43
+		ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:17:9-43
 	android:theme
-		ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:20:9-40
+		ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:20:9-40
 meta-data#com.google.android.geo.API_KEY
-ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:30:9-32:55
+ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:30:9-32:55
 	android:value
-		ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:32:13-52
+		ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:32:13-52
 	android:name
-		ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:31:13-58
+		ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:31:13-58
 activity#grp1.grp1.MapsActivity
-ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:34:9-42:20
+ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:34:9-42:20
 	android:label
-		ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:36:13-56
+		ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:36:13-56
 	android:name
-		ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:35:13-41
+		ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:35:13-41
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:37:13-41:29
+ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:37:13-41:29
 action#android.intent.action.MAIN
-ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:38:17-69
+ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:38:17-69
 	android:name
-		ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:38:25-66
+		ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:38:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:40:17-77
+ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:40:17-77
 	android:name
-		ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:40:27-74
+		ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:40:27-74
 service#grp1.grp1.GPS
-ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:43:9-40
+ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:43:9-40
 	android:name
-		ADDED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml:43:18-37
+		ADDED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml:43:18-37
 uses-sdk
-INJECTED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:appcompat-v7:24.2.1] /Users/warrenboult/.android/build-cache/a28f420805bafacc9387c90411e000cfc0caf43f/output/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:24.2.1] /Users/warrenboult/.android/build-cache/5f02b957aa9ca631a8d4dc64e0bd45c767b142bb/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:24.2.1] /Users/warrenboult/.android/build-cache/bc46c6b40458af9ccd07efb4afd58271658b45ed/output/AndroidManifest.xml:21:5-43
-MERGED from [com.android.volley:volley:1.0.0] /Users/warrenboult/.android/build-cache/fc717c923fc435df1a4767bc8dee08e2933aa4d7/output/AndroidManifest.xml:7:5-43
-MERGED from [com.google.maps.android:android-maps-utils:0.4.4] /Users/warrenboult/.android/build-cache/8d659e5ab302377e1f6510929b00d900c20eb49a/output/AndroidManifest.xml:5:5-43
-MERGED from [com.google.android.gms:play-services-maps:10.2.6] /Users/warrenboult/.android/build-cache/d1f24e0f6ce1f5715bd76e6e1838b33af8280fc6/output/AndroidManifest.xml:23:5-43
-MERGED from [com.google.android.gms:play-services-base:10.2.6] /Users/warrenboult/.android/build-cache/b5cf7da8dea2b2ca223d9f440f71c8212cdeae91/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-tasks:10.2.6] /Users/warrenboult/.android/build-cache/ee0c343afc3ca621053dd47659f6e9e204d6fcba/output/AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-basement:10.2.6] /Users/warrenboult/.android/build-cache/cfc3a944bd914c17496642785e6d3ea0f0d02f35/output/AndroidManifest.xml:17:5-43
-MERGED from [com.android.support:support-v4:25.2.0] /Users/warrenboult/.android/build-cache/3b0d4537075083bc256d7faafceff707cd13532c/output/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:25.2.0] /Users/warrenboult/.android/build-cache/9d1443281edd0333a211d86f6bf4e3e81c7f1f25/output/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.2.0] /Users/warrenboult/.android/build-cache/fb6161301cba430a1e1e83cb32ba4523d0d440e8/output/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:25.2.0] /Users/warrenboult/.android/build-cache/550469b56b25bd595282bdf3ee190a911c97bb49/output/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:25.2.0] /Users/warrenboult/.android/build-cache/681fd92d7bd73e83d33630ad1d6aec64ad880a49/output/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-compat:25.2.0] /Users/warrenboult/.android/build-cache/7d6a2e5aa6c4330a423828831dab9b19c4c8ec5e/output/AndroidManifest.xml:21:5-23:58
+INJECTED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:appcompat-v7:24.2.1] C:\Users\Din\.android\build-cache\1c25f165830512acbe8c0b9c6f742cdc48690265\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:24.2.1] C:\Users\Din\.android\build-cache\be5d2043c6a4fc8b7b18b4069f261e883ea99b7c\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:24.2.1] C:\Users\Din\.android\build-cache\91ca0434da4e7ba95fc5ddbe4d9ba8256af53bc8\output\AndroidManifest.xml:21:5-43
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\Din\.android\build-cache\96047eeac98eeb025bb7d4e4e1e3ecfa1f24954d\output\AndroidManifest.xml:7:5-43
+MERGED from [com.google.maps.android:android-maps-utils:0.4.4] C:\Users\Din\.android\build-cache\71a9f480f70f7e255196bae687f468551952a4d6\output\AndroidManifest.xml:5:5-43
+MERGED from [com.google.android.gms:play-services-maps:10.2.6] C:\Users\Din\.android\build-cache\0fb79e322dd073437e56655a272ca9547e4eaf91\output\AndroidManifest.xml:23:5-43
+MERGED from [com.google.android.gms:play-services-base:10.2.6] C:\Users\Din\.android\build-cache\02b3ace1e12808de1998f4a2a8ef2d49370487b0\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-tasks:10.2.6] C:\Users\Din\.android\build-cache\e72790e19e83200b879f2451e6027a063e326244\output\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-basement:10.2.6] C:\Users\Din\.android\build-cache\1105428db38f82b84e11748729b9ec4ea40f5672\output\AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Din\.android\build-cache\23157f4ecd6824fe8041270b289fa36c0cac4688\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Din\.android\build-cache\afb6cf65e662a9f07cded90a6ca0809dd8f40b97\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Din\.android\build-cache\e6f92d9175a028b849664dc307addfe03d173cf8\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Din\.android\build-cache\802f7ee596e87fcb339b7b715df8ec7532e59652\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Din\.android\build-cache\30d79d8484a3e20f94c2caacf2afcbdc63fe6b29\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Din\.android\build-cache\e1463bd603fe770e610bdd148d9c96f64ca94743\output\AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:24.2.1] /Users/warrenboult/.android/build-cache/a28f420805bafacc9387c90411e000cfc0caf43f/output/AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:appcompat-v7:24.2.1] C:\Users\Din\.android\build-cache\1c25f165830512acbe8c0b9c6f742cdc48690265\output\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
-		INJECTED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/warrenboult/Documents/MSC/ASE/SEGroup1/location_app_grp1/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Din\Desktop\location_app_grp1\app\src\main\AndroidManifest.xml
 meta-data#com.google.android.gms.version
-ADDED from [com.google.maps.android:android-maps-utils:0.4.4] /Users/warrenboult/.android/build-cache/8d659e5ab302377e1f6510929b00d900c20eb49a/output/AndroidManifest.xml:8:9-10:69
-MERGED from [com.google.android.gms:play-services-basement:10.2.6] /Users/warrenboult/.android/build-cache/cfc3a944bd914c17496642785e6d3ea0f0d02f35/output/AndroidManifest.xml:20:9-121
+ADDED from [com.google.maps.android:android-maps-utils:0.4.4] C:\Users\Din\.android\build-cache\71a9f480f70f7e255196bae687f468551952a4d6\output\AndroidManifest.xml:8:9-10:69
+MERGED from [com.google.android.gms:play-services-basement:10.2.6] C:\Users\Din\.android\build-cache\1105428db38f82b84e11748729b9ec4ea40f5672\output\AndroidManifest.xml:20:9-121
 	android:value
-		ADDED from [com.google.maps.android:android-maps-utils:0.4.4] /Users/warrenboult/.android/build-cache/8d659e5ab302377e1f6510929b00d900c20eb49a/output/AndroidManifest.xml:10:13-66
+		ADDED from [com.google.maps.android:android-maps-utils:0.4.4] C:\Users\Din\.android\build-cache\71a9f480f70f7e255196bae687f468551952a4d6\output\AndroidManifest.xml:10:13-66
 	android:name
-		ADDED from [com.google.maps.android:android-maps-utils:0.4.4] /Users/warrenboult/.android/build-cache/8d659e5ab302377e1f6510929b00d900c20eb49a/output/AndroidManifest.xml:9:13-58
+		ADDED from [com.google.maps.android:android-maps-utils:0.4.4] C:\Users\Din\.android\build-cache\71a9f480f70f7e255196bae687f468551952a4d6\output\AndroidManifest.xml:9:13-58
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [com.google.android.gms:play-services-maps:10.2.6] /Users/warrenboult/.android/build-cache/d1f24e0f6ce1f5715bd76e6e1838b33af8280fc6/output/AndroidManifest.xml:19:5-78
+ADDED from [com.google.android.gms:play-services-maps:10.2.6] C:\Users\Din\.android\build-cache\0fb79e322dd073437e56655a272ca9547e4eaf91\output\AndroidManifest.xml:19:5-78
 	android:name
-		ADDED from [com.google.android.gms:play-services-maps:10.2.6] /Users/warrenboult/.android/build-cache/d1f24e0f6ce1f5715bd76e6e1838b33af8280fc6/output/AndroidManifest.xml:19:22-76
+		ADDED from [com.google.android.gms:play-services-maps:10.2.6] C:\Users\Din\.android\build-cache\0fb79e322dd073437e56655a272ca9547e4eaf91\output\AndroidManifest.xml:19:22-76
 uses-feature#0x00020000
-ADDED from [com.google.android.gms:play-services-maps:10.2.6] /Users/warrenboult/.android/build-cache/d1f24e0f6ce1f5715bd76e6e1838b33af8280fc6/output/AndroidManifest.xml:21:5-77
+ADDED from [com.google.android.gms:play-services-maps:10.2.6] C:\Users\Din\.android\build-cache\0fb79e322dd073437e56655a272ca9547e4eaf91\output\AndroidManifest.xml:21:5-77
 	android:glEsVersion
-		ADDED from [com.google.android.gms:play-services-maps:10.2.6] /Users/warrenboult/.android/build-cache/d1f24e0f6ce1f5715bd76e6e1838b33af8280fc6/output/AndroidManifest.xml:21:19-51
+		ADDED from [com.google.android.gms:play-services-maps:10.2.6] C:\Users\Din\.android\build-cache\0fb79e322dd073437e56655a272ca9547e4eaf91\output\AndroidManifest.xml:21:19-51
 	android:required
-		ADDED from [com.google.android.gms:play-services-maps:10.2.6] /Users/warrenboult/.android/build-cache/d1f24e0f6ce1f5715bd76e6e1838b33af8280fc6/output/AndroidManifest.xml:21:52-75
+		ADDED from [com.google.android.gms:play-services-maps:10.2.6] C:\Users\Din\.android\build-cache\0fb79e322dd073437e56655a272ca9547e4eaf91\output\AndroidManifest.xml:21:52-75
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:10.2.6] /Users/warrenboult/.android/build-cache/b5cf7da8dea2b2ca223d9f440f71c8212cdeae91/output/AndroidManifest.xml:19:9-172
+ADDED from [com.google.android.gms:play-services-base:10.2.6] C:\Users\Din\.android\build-cache\02b3ace1e12808de1998f4a2a8ef2d49370487b0\output\AndroidManifest.xml:19:9-172
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:10.2.6] /Users/warrenboult/.android/build-cache/b5cf7da8dea2b2ca223d9f440f71c8212cdeae91/output/AndroidManifest.xml:19:146-170
+		ADDED from [com.google.android.gms:play-services-base:10.2.6] C:\Users\Din\.android\build-cache\02b3ace1e12808de1998f4a2a8ef2d49370487b0\output\AndroidManifest.xml:19:146-170
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:10.2.6] /Users/warrenboult/.android/build-cache/b5cf7da8dea2b2ca223d9f440f71c8212cdeae91/output/AndroidManifest.xml:19:86-145
+		ADDED from [com.google.android.gms:play-services-base:10.2.6] C:\Users\Din\.android\build-cache\02b3ace1e12808de1998f4a2a8ef2d49370487b0\output\AndroidManifest.xml:19:86-145
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:10.2.6] /Users/warrenboult/.android/build-cache/b5cf7da8dea2b2ca223d9f440f71c8212cdeae91/output/AndroidManifest.xml:19:19-85
+		ADDED from [com.google.android.gms:play-services-base:10.2.6] C:\Users\Din\.android\build-cache\02b3ace1e12808de1998f4a2a8ef2d49370487b0\output\AndroidManifest.xml:19:19-85
