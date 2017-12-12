@@ -25,7 +25,7 @@
   "scripts": {
     "start": "NODE_ENV=development pm2 start app.js",
     "pretest": "NODE_ENV=test pm2 start app.js --name testserver",
-    "test": "mocha test/*",
+    "test": "nyc mocha test/*",
     "posttest": "pm2 delete testserver"
   },
   "repository": {
