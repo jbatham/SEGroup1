@@ -27,6 +27,9 @@ package-lock.json
 *.log
 *.gz
 
+# nyc
+.nyc_output
+
 # env
 .env*
 

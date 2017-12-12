@@ -14,13 +14,16 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "istanbul": "^0.4.5",
     "mocha": "^4.0.1",
+    "mocha-junit-reporter": "^1.15.0",
+    "nyc": "^11.3.0",
     "request": "^2.83.0",
     "sinon": "^4.1.2"
   },
   "scripts": {
     "start": "NODE_ENV=development node app.js",
-    "test": "NODE_ENV=test mocha test/*"
+    "test": "NODE_ENV=test nyc mocha test/*"
   },
   "repository": {
     "type": "git",
