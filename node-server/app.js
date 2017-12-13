@@ -20,7 +20,7 @@ db.connect(function(err) {
 		// throw new Error('DB CONNECT ERROR');
 	} else {
 		console.log('  Connected!')
-		server = app.listen(PORT, function(err) {
+		app.listen(PORT, function(err) {
 			console.log("> Connecting to server..");
 			if (err) {
 				console.log('> Unable to start the server!');
@@ -31,4 +31,3 @@ db.connect(function(err) {
 		})
 	}
 });
-module.exports = server;
