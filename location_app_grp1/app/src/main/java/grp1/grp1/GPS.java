@@ -23,18 +23,20 @@ import java.util.concurrent.ExecutionException;
  * Created by Din on 20/10/2017.
  */
 
+//Class to get GPS location
 public class GPS implements LocationListener {
     //class to handle location and gps services
     Context context;
 
+    //method called which returns location
     public Location getLocation(){
-
+        //checking if user has given location access permission
         if(ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED){
             Toast.makeText(context,"Location Access not grandted", Toast.LENGTH_LONG).show();
             return null;
         }
         LocationManager lm = (LocationManager)context.getSystemService(Context.LOCATION_SERVICE);
-        boolean isGPSenabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        boolean isGPSenabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER);  //checking if GPS enabled
         if(isGPSenabled){
             lm.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,0, this);
             Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);

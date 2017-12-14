@@ -80,17 +80,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     GPS gps;
     TextView laview, lnview;
     JSONArray jsonArray, jsonArray2;
-    //ArrayList<LatLng> slocations = new ArrayList();
-   // ArrayList<LatLng> mlocations = new ArrayList();
-   // ArrayList<LatLng> hlocations = new ArrayList();
-    ArrayList<LatLng> clocations = new ArrayList();
-    ArrayList<CData> cdata = new ArrayList<>();
-    ArrayList<CData> cdata2 = new ArrayList<>();
-    ArrayList<Marker> markerremove = new ArrayList<>();
-    ArrayList<WeightedLatLng> wlocations = new ArrayList();
+    //ArrayList<LatLng> slocations = new ArrayList();   //array for fixed (non dynamic) heatmap, small price
+   // ArrayList<LatLng> mlocations = new ArrayList();   //array for fixed (non dynamic) heatmap, medium price
+   // ArrayList<LatLng> hlocations = new ArrayList();   //array for fixed (non dynamic) heatmap high price
+    ArrayList<LatLng> clocations = new ArrayList(); //store crime location
+    ArrayList<CData> cdata = new ArrayList<>();     //store crime data
+    ArrayList<CData> cdata2 = new ArrayList<>();    //store crime data
+    ArrayList<Marker> markerremove = new ArrayList<>();     //store markers to remove
+    ArrayList<WeightedLatLng> wlocations = new ArrayList();     //weighted locations for dynamic heatmap
     private HeatmapTileProvider mProvider;
 
-    double defaultlat = 50.82253000000001, defaultlong = -0.13716299999998682;
+    double defaultlat = 50.82253000000001, defaultlong = -0.13716299999998682;  //default location if not sending latlong to app
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,10 +110,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         crimeb = (Button) findViewById(R.id.cdatab);
 
 
+        //get current location
         ActivityCompat.requestPermissions(MapsActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 111);
         currentl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //calling GPS class method
                 gps = new GPS(MapsActivity.this);
                 double latitude, longitude;
                 Location location = gps.getLocation();
@@ -126,6 +128,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     lnview.setText("" + longitude + "");
                     defaultlat = latitude;
                     defaultlong = longitude;
+                    //displaying current location
                     mMap.clear();
                     LatLng latlng = new LatLng(latitude, longitude);
                     mMap.addMarker(new MarkerOptions().position(latlng).title("Current Position").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
@@ -134,7 +137,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
-
+        //heatmap button: get json from edited link and process data through GetDataTask() method
         heatmapb1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -143,6 +146,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             };
         });
 
+        //crime button: get json from edited link(applying selected date) and process data through GetCrimeData() method
         crimeb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -155,7 +159,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
     }
 
-
+    //processing house price data and storing on wlocations array
     private void addLocation() {
         //slocations.clear();
         //mlocations.clear();
@@ -183,12 +187,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
+    //processing crime data and storing on cdata array
     private void addCrime(){
         cdata2= cdata;
         cdata.clear();
         int jsonArray2length;
-        if(jsonArray2.length()>600){
-            jsonArray2length=600;
+        //remove if statement for full crime data, keep else statement
+        if(jsonArray2.length()>500){
+            jsonArray2length=500;
         }else{
             jsonArray2length=jsonArray2.length();
         }
@@ -210,7 +216,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-
+    //adding crime marker on map after removing previous markers
     public void addCrimeMarker(){
         if(cdata2.size()!=0){
             for(int i=0; i<markerremove.size();i++){
@@ -229,7 +235,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-
+    //adding weighted heatmap
     private void addHeatMap(){
         int[] colors = {Color.rgb(0,25,240), Color.rgb(0,255,0), Color.rgb(240,255,0), Color.rgb(255,0,0)};
         float[] startPoints = {
@@ -242,6 +248,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(curLocation,13));
         mProvider = new HeatmapTileProvider.Builder().weightedData(wlocations).gradient(gradient).radius(27).opacity(0.9).build();
         mOverlay = mMap.addTileOverlay(new TileOverlayOptions().tileProvider(mProvider));
+
+        //below code for non dynamic and fixed heatmap
         /*int[] colors = {Color.rgb(102,225,0), Color.rgb(102,225,0)}; //green
         int[] colors2 = {Color.rgb(225,225,0), Color.rgb(225,225,0)}; //yellow
         int[] colors3 = {Color.rgb(225,0,0), Color.rgb(225,0,0)}; //red
@@ -265,6 +273,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }*/
     }
 
+
+    //on start
     @Override
     public void onMapReady(GoogleMap googleMap) {
         //method displays University of Sussex on the map on app startup
@@ -275,7 +285,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(uos,12));
     }
 
-
+    //posting data and reading input from server for house data
     class GetDataTask extends AsyncTask<String, Void, String> {
         ProgressDialog progressDialog;
 
@@ -289,7 +299,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         @Override
         protected String doInBackground(String... params) {
-
             StringBuilder result = new StringBuilder();
             //connect to server
             try{
@@ -327,6 +336,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
 
+    //posting data and reading input from server for crime data
     class GetCrimeData extends AsyncTask<String, Void, String> {
         ProgressDialog progressDialog;
 
