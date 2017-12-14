@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    ports:
+      - 5000:5000
+    # networks:
+    #   - mysqlbridge
+    # external_links:
+    #   - testdb_mysql_1
+    env_file:
+      - .env
+    environment:
+      - DATABASE_HOST=172.19.0.3
+
+# networks:
+#   mysqlbridge:
+#     external: true
+
+# TODO: get docker-compose working, interaction between db container and server
+# container

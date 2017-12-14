@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  mysql:
+    build: .
+    ports:
+      - 3306:3306
+    # networks:
+    #   - mysqlbridge
+    environment:
+      # - MYSQL_DATABASE=test
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+
+# networks:
+#   mysqlbridge:
+#     external: true

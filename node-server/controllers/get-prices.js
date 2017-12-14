@@ -12,7 +12,7 @@ exports.get_location_radius = function(req, res) {
 		}
 		else {
 			var resultString = JSON.stringify(result);
-			console.log('Response sent: ', resultString);
+			// console.log('Response sent: ', resultString);
 			json = JSON.parse(resultString);
 			res.json(json);
 		}
