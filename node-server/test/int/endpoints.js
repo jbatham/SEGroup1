@@ -15,8 +15,8 @@ describe('Server integrations', () => {
 			.end(function(err, response) {
 				expect(response.statusCode).to.equal(200);
 				expect(response.headers['content-type']).to.equal('text/html; charset=utf-8');
-				done();
 			});
+		done();
 	});
 	it('should respond with error to a request at incorrect port', function(done) {
 		var wrongPort = PORT - 1;
@@ -25,8 +25,8 @@ describe('Server integrations', () => {
 			.end(function(err, response) {
 				expect(err).to.not.be.null;
 				expect(err.errno).to.equal('ECONNREFUSED');
-				done();
 			});
+		done();
 	});
 	it('should respond with 404 to invalid endpoint', function(done) {
 		chai.request(`http://localhost:${PORT}`)
@@ -34,12 +34,23 @@ describe('Server integrations', () => {
 			.end(function(err, response) {
 				expect(err).to.not.be.null;
 				expect(err.status).to.equal(404);
-				done();
 			});
+		done();
 	});
-	it.skip('should get a response from the db request', function(done) {
+	it('should get a response from the db request', function(done) {
 		chai.request(`http://localhost:${PORT}`)
-			.post()
+			.post('/price-data/get')
+			.set('content-type', 'application/x-www-form-urlencoded')
+			.query({lat:50.8388481140, long:-0.1175390035, distance:3})
+			.end(function(err, response) {
+				expect(response.body).to.have.length(5);
+				expect(response.body[0]).to.have.property('postcode');
+				expect(response.body[0]).to.have.property('lat');
+				expect(response.body[0]).to.have.property('lng');
+				expect(response.body[0]).to.have.property('price');
+				expect(response.body[0].postcode).to.equal('BN2 4EN');
+			});
+		done();
 	});
-	it('server should be listening');
+	it('more db request stuff');
 });
